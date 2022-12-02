@@ -23,13 +23,13 @@ export class User {
   @Column()
   surname!: string;
 
-  @Column()
+  @Column({ unique: true })
   username!: string;
 
   @Column()
   password!: string;
 
-  @Column()
+  @Column({ unique: true })
   email!: string;
 
   @Column({
