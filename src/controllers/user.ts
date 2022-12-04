@@ -29,9 +29,13 @@ export const register = async (req: Request, res: Response) => {
 };
 
 export const login = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
-  const user = await userRepository.findOneBy({ email });
+  console.log(req.body);
+
+  const user = await userRepository.findOne({ where: { username } });
+
+  console.log(user);
 
   if (!user) {
     throw new BadRequestError("Invalid credentials.");
