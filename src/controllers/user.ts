@@ -13,7 +13,7 @@ export const register = async (req: Request, res: Response) => {
   const user = userRepository.create({
     email: userInput.email,
     password: hashedPassword,
-    username: userInput.usrname,
+    username: userInput.username,
     name: userInput.name,
     surname: userInput.surname,
   });
