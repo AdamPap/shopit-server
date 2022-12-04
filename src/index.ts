@@ -4,6 +4,7 @@ import "express-async-errors";
 // import cors from "cors";
 import session from "express-session";
 import userRoutes from "./routes/users";
+import productRoutes from "./routes/products";
 import { errorHandler } from "./middleware/error-handler";
 
 const app = express();
@@ -33,6 +34,7 @@ app.use(
 );
 
 app.use(userRoutes);
+app.use(productRoutes);
 
 app.use(errorHandler);
 
