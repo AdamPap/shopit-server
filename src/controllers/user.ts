@@ -16,6 +16,7 @@ export const register = async (req: Request, res: Response) => {
     username: userInput.username,
     name: userInput.name,
     surname: userInput.surname,
+    userRole: userInput.userRole,
   });
 
   await userRepository.save(user);
